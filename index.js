@@ -62,10 +62,10 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * (3));
 }
-
+  console.log(inning);
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -81,8 +81,14 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inningCB, inning){
+  let Home = 0;
+  let Away = 0;
+  for (let i = 0; i < inning; i++){
+    Home = Home + inningCB();
+    Away = Away + inningCB();
+  }
+  return {Home, Away};
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -120,7 +126,7 @@ Use the scoreboard function below to do the following:
   "Final Score: Away 11 - Home 12"  
 ]
 
-  TIE example: invoking scoreboard(getInningScore,inning, 9) might return 
+  TIE example: invoking scoreboard(getInningScoreCB,inning, 9) might return 
   an array of strings like this:
 [
   "Inning 1: Away 1 - Home 1", 
@@ -136,11 +142,13 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getIninningScore, inning, num) {
+  
 }
-
-
+// declare array
+//loop
+// for loop pushing a string
+// for a newarray
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
